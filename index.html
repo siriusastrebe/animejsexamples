@@ -1,0 +1,177 @@
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<style type="text/css">
+.siriusContainer {
+  font-size: 36px;
+}
+
+.sirius {
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.siri, .middleInitial {
+  display: inline-block;
+}
+
+.charge {
+  width: 0px;
+  height: 25px;
+  background-color: lime;
+  float: left;
+}
+
+#battery {
+  width: 60px;
+  height: 25px;
+  border: solid grey 5px;
+  float: left;
+}
+
+#plus {
+  width: 5px;
+  height: 15px;
+  margin-top: 10px;
+  background-color: grey;
+  float: left;
+}
+
+.line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 3px;
+  width: 100%;
+  background-color: #402d2d;
+  transform-origin: 0.5 0;
+}
+
+.siriusContainer {
+  position: relative;
+  display: inline-block;
+}
+
+</style>
+</head>
+<body>
+<div class="siriusContainer">
+  <span class="line"></span>
+  <div class="sirius first">
+    <span class="siri">S</span>
+    <span class="siri">I</span>
+    <span class="siri">R</span>
+    <span class="siri">I</span>
+    <span class="siri">U</span>
+    <span class="siri">S</span>
+  </div>
+  <div class="sirius middle">
+    <span class="middleInitial">A</span>
+  </div>
+  <div class="sirius last">
+    <span class="siri">S</span>
+    <span class="siri">T</span>
+    <span class="siri">R</span>
+    <span class="siri">E</span>
+    <span class="siri">B</span>
+    <span class="siri">E</span>
+  </div>
+  <span class="line"></span>
+</div>
+
+
+
+<div id="battery">
+  <div class="charge"></div>
+  <div class="charge"></div>
+  <div class="charge"></div>
+</div>
+<div id="plus"></div>
+
+
+<script>
+/*
+let siriusAnimation = anime({
+  targets: '.siri',
+  easing: 'linear',
+  duration: 800,
+  scale: [0, anime.stagger([0.8, 1], {from: 'center'})],
+});
+*/
+
+anime.timeline({loop: false})
+  .add({
+    targets: '.line',
+    opacity: [0.5,1],
+    scaleX: [0, 1],
+    easing: "easeInOutExpo",
+    duration: 700
+  }).add({
+    targets: '.line',
+    duration: 600,
+    easing: "easeOutExpo",
+    translateY: (el, i) => (-0.625 + 0.625*2*i) + "em"
+  }).add({
+    targets: '.siri',
+    scale: [0.3,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 600,
+    delay: (el, i) => 75 * (i+1),
+  }, '-=200').add({
+    targets: '.middleInitial',
+    scale: [3,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeInOutExpo",
+  });
+
+
+/*
+    targets: '.sirius.middle',
+    opacity: [0,1],
+    scaleY: [0.5, 1],
+    easing: "easeOutExpo",
+    duration: 600,
+    offset: '-=600'
+  }).add({
+    targets: '.sirius.first',
+    opacity: [0,1],
+    translateX: ["0.5em", 0],
+    easing: "easeOutExpo",
+    duration: 600,
+    offset: '-=300'
+  }).add({
+    targets: '.sirius.last',
+    opacity: [0,1],
+    translateX: ["-0.5em", 0],
+    easing: "easeOutExpo",
+    duration: 600,
+    offset: '-=600'
+  });
+*/
+
+
+let chargeAnimation = anime({
+  targets: '.charge',
+  width: 20,
+  duration: 300,
+  easing: 'linear',
+  delay: function(el, i, l) {
+    console.log(el, i, l);
+    return i * 100;
+  },
+  endDelay: 500,
+  loop: false
+});
+
+</script>
+
+
+</body>
+</html>
+
