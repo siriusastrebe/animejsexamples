@@ -52,6 +52,10 @@
   transform-origin: 0.5 0;
 }
 
+.huge {
+  font-size: 30px;
+}
+
 .siriusContainer {
   position: relative;
   display: inline-block;
@@ -94,8 +98,12 @@
   <span class="line"></span>
 </div>
 
+<div class="hackerText huge">
+  Senior Full Stack Developer
+</div>
+
 <div class="hackerText">
-  Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world!
+  I build beautiful data visualizations, real time web apps, scalable backends.
 </div>
 
 
@@ -193,6 +201,7 @@ function letterify(cssSelector, letterClass) {
 }
 
 letterify('.hackerText', 'hackerLetter');
+
 anime.timeline({loop: false})
   .add({
     targets: '.hackerLetter',
@@ -201,7 +210,7 @@ anime.timeline({loop: false})
       {backgroundColor: '#000000'}
     ],
     duration: 200,
-    delay: (el, i) => 100 * (i+1),
+    delay: (el, i) => 100 * (i),
   })
 
 
