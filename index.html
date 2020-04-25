@@ -3,13 +3,15 @@
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
 <style type="text/css">
 .siriusContainer {
-  font-size: 36px;
+  font-size: 64px;
 }
 
 .sirius {
   display: inline-block;
   margin-right: 10px;
   margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .siri, .middleInitial {
@@ -55,6 +57,16 @@
   display: inline-block;
 }
 
+.hackerText {
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
+.hackerLetter {
+  opacity: 0;
+  font-family: monospace;
+}
+
 </style>
 </head>
 <body>
@@ -80,6 +92,10 @@
     <span class="siri">E</span>
   </div>
   <span class="line"></span>
+</div>
+
+<div class="hackerText">
+  Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world!
 </div>
 
 
@@ -114,8 +130,16 @@ anime.timeline({loop: false})
     duration: 600,
     easing: "easeOutExpo",
     translateY: (el, i) => (-0.625 + 0.625*2*i) + "em"
-  }).add({
-    targets: '.siri',
+  }, '-=200').add({
+    targets: '.first .siri',
+    scale: [0.3,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 600,
+    delay: (el, i) => 75 * (i+1),
+  }, '-=200').add({
+    targets: '.last .siri',
     scale: [0.3,1],
     opacity: [0,1],
     translateZ: 0,
@@ -128,7 +152,7 @@ anime.timeline({loop: false})
     opacity: [0,1],
     translateZ: 0,
     easing: "easeInOutExpo",
-  });
+  }, '-=200');
 
 
 /*
@@ -154,6 +178,33 @@ anime.timeline({loop: false})
     offset: '-=600'
   });
 */
+
+
+function letterify(cssSelector, letterClass) {
+  let containers = document.querySelectorAll(cssSelector);
+  containers.forEach((container) => {
+    let text = container.textContent.split('');
+    let result = '';
+    text.forEach(function(char){
+      result += '<span class="' + letterClass + '">' + char + '</span>';
+    });
+    container.innerHTML = result;
+  });
+}
+
+letterify('.hackerText', 'hackerLetter');
+anime.timeline({loop: false})
+  .add({
+    targets: '.hackerLetter',
+    keyframes: [
+      {opacity: 1, backgroundColor: '#00FF00'},
+      {backgroundColor: '#000000'}
+    ],
+    duration: 200,
+    delay: (el, i) => 100 * (i+1),
+  })
+
+
 
 
 let chargeAnimation = anime({
