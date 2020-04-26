@@ -25,7 +25,45 @@
   width: 100%;
 }
 
+.greenCircle {
+  border-radius: 12px;
+  width: 24px;
+  height: 24px;
+  background-color: #5DA656;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.mTop {
+  margin-top: 20px;
+}
+.mTopLarge {
+  margin-top: 40px;
+}
+.mLeft {
+  margin-left: 20px;
+}
+.mRight {
+  margin-right: 20px;
+}
+
+.bright {
+  color: yellow;
+}
+
+
+.blackDrop {
+  padding-top: 10vh;
+  background-color: black;
+  color: white;
+  min-height: 40vh;
+}
+
 .siriusContainer {
+  color: #B0CdCd;
   font-size: 64px;
 }
 
@@ -44,7 +82,7 @@
 .charge {
   width: 0px;
   height: 25px;
-  background-color: lime;
+  background-image: linear-gradient(#88FF88, #00CC00);
   float: left;
 }
 
@@ -71,7 +109,7 @@
   margin: auto;
   height: 3px;
   width: 100%;
-  background-color: #402d2d;
+  background-color: #B0CdCd;
   transform-origin: 0.5 0;
 }
 
@@ -95,27 +133,53 @@
   font-family: monospace;
 }
 
-.mTop {
-  margin-top: 20px;
-}
-.mTopLarge {
-  margin-top: 40px;
-}
-.mLeft {
-  margin-left: 20px;
-}
-.mRight {
-  margin-right: 20px;
-}
-
-
-
 
 .skills {
-  width: 90%;
-  left: 5%;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+.card {
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border-radius: 10px;
+  min-height: 300px;
+  color: #466283;
+  font-family: verdana;
+  width: 33%;
+}
+
+.leftCard {
+  margin-right: -20px;
+}
+
+.middleCard {
+  z-index: 10;
+}
+
+.rightCard {
+  margin-left: -20px;
+}
+
+
+@media (max-width: 1024px) {
+  .skills {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .leftCard, .middleCard, .rightCard {
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+  }
+
+  .middleCard {
+  }
 }
 
 .technologies ul {
@@ -128,16 +192,6 @@
 
 .technologies {
   width: 60%;
-}
-
-.card {
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.2);
-  background-color: white;
-  border-radius: 10px;
-  min-height: 300px;
-  color: #466283;
-  font-family: verdana;
-  width: 33%;
 }
 
 .cardHeader {
@@ -153,30 +207,6 @@
   justify-content: center;
 }
 
-.leftCard {
-  margin-right: -30px;
-}
-
-.middleCard {
-  z-index: 10;
-}
-
-.rightCard {
-  margin-left: -30px;
-}
-
-.greenCircle {
-  border-radius: 12px;
-  width: 24px;
-  height: 24px;
-  background-color: #5DA656;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-}
-
 .largeFont {
   font-size: 20px;
   font-weight: bold;
@@ -186,46 +216,53 @@
 </style>
 </head>
 <body>
-<div class="siriusContainer">
-  <span class="line"></span>
-  <div class="sirius first">
-    <span class="siri">S</span>
-    <span class="siri">I</span>
-    <span class="siri">R</span>
-    <span class="siri">I</span>
-    <span class="siri">U</span>
-    <span class="siri">S</span>
+
+<div class="blackDrop">
+  <div class="siriusContainer">
+    <span class="line"></span>
+    <div class="sirius first">
+      <span class="siri">S</span>
+      <span class="siri">I</span>
+      <span class="siri">R</span>
+      <span class="siri">I</span>
+      <span class="siri">U</span>
+      <span class="siri">S</span>
+    </div>
+    <div class="sirius middle">
+      <span class="middleInitial">A</span>
+    </div>
+    <div class="sirius last">
+      <span class="siri">S</span>
+      <span class="siri">T</span>
+      <span class="siri">R</span>
+      <span class="siri">E</span>
+      <span class="siri">B</span>
+      <span class="siri">E</span>
+    </div>
+    <span class="line"></span>
   </div>
-  <div class="sirius middle">
-    <span class="middleInitial">A</span>
+
+  <div class="hackerText huge">
+    Senior Full Stack Developer
   </div>
-  <div class="sirius last">
-    <span class="siri">S</span>
-    <span class="siri">T</span>
-    <span class="siri">R</span>
-    <span class="siri">E</span>
-    <span class="siri">B</span>
-    <span class="siri">E</span>
+
+  <div class="hackerText">
+    I build beautiful data visualizations, real time web apps, scalable backends.
   </div>
-  <span class="line"></span>
+
+  <div class="hackerText largeFont">
+    About Me:
+  </div>
+  <div class="hackerText">
+    I am named after a star ☆. I built my first website when I was 14.
+  </div>
+
+  <div class="hackerText">
+    Since then, I graduated with a Computer Science degree from Western Washington University, worked 10+ years professionally propelling start ups like SigmaIQ to their series A, or helping real-estate giant CBRE move their workflow to the digital age.
+  </div>
 </div>
 
-<div class="hackerText huge">
-  Senior Full Stack Developer
-</div>
 
-<div class="hackerText">
-  I build beautiful data visualizations, real time web apps, scalable backends.
-</div>
-
-
-
-<div id="battery">
-  <div class="charge"></div>
-  <div class="charge"></div>
-  <div class="charge"></div>
-</div>
-<div id="plus"></div>
 
 <div class="skills">
   <div class="card leftCard mTopLarge">
@@ -364,6 +401,16 @@
 </div>
 
 
+<div class="flex-row-center mTopLarge">
+  <div id="battery">
+    <div class="charge"></div>
+    <div class="charge"></div>
+    <div class="charge"></div>
+  </div>
+  <div id="plus"></div>
+</div>
+
+
 <script>
 /*
 let siriusAnimation = anime({
@@ -457,8 +504,8 @@ anime.timeline({loop: false})
       {opacity: 1, backgroundColor: '#00FF00'},
       {backgroundColor: '#000000'}
     ],
-    duration: 200,
-    delay: (el, i) => 100 * (i),
+    duration: 100,
+    delay: (el, i) => 50 * (i),
   })
 
 
