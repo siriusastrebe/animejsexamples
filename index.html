@@ -2,6 +2,29 @@
 <head>
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
 <style type="text/css">
+
+.flex-row-around {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.flex-row-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.flex-row-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.wide {
+  width: 100%;
+}
+
 .siriusContainer {
   font-size: 64px;
 }
@@ -65,10 +88,85 @@
   background-color: black;
   color: white;
   padding: 20px;
+  font-family: monospace;
 }
 .hackerLetter {
   opacity: 0;
   font-family: monospace;
+}
+
+.mTop {
+  margin-top: 20px;
+}
+.mLeft {
+  margin-left: 20px;
+}
+.mRight {
+  margin-right: 20px;
+}
+
+
+
+
+.skills {
+  width: 90%;
+  left: 5%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.technologies {
+  width: 60%;
+}
+
+.card {
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border-radius: 10px;
+  min-height: 300px;
+  color: #466283;
+  font-family: Roboto;
+  width: 33%;
+}
+
+.cardHeader {
+  text-align: center;
+  background-color: #f2f4f8;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.leftCard {
+  margin-right: -30px;
+}
+
+.middleCard {
+  z-index: 10;
+}
+
+.rightCard {
+  margin-left: -30px;
+}
+
+.greenCircle {
+  border-radius: 12px;
+  width: 24px;
+  height: 24px;
+  background-color: #5DA656;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.largeFont {
+  font-size: 24px;
+}
+
+.skills ul li {
+  list-style-type: none;
 }
 
 </style>
@@ -114,6 +212,140 @@
   <div class="charge"></div>
 </div>
 <div id="plus"></div>
+
+<div class="skills">
+  <div class="card leftCard mTop">
+    <div class="cardHeader">
+      Front End
+    </div>
+
+    <div class="mTop flex-row-center">
+      <div class="greenCircle mRight">✓</div>
+      <div class="technologies">
+        <div class="largeFont">Fundamentals</div>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Javascript</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mTop flex-row-center">
+      <div class="greenCircle mRight">✓</div>
+      <div class="technologies">
+        <div class="largeFont">Frameworks</div>
+        <ul>
+          <li>React</li>
+          <li>Angular</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mTop flex-row-center">
+      <div class="greenCircle mRight">✓</div>
+      <div class="technologies">
+        <div class="largeFont">Visualization</div>
+        <ul>
+          <li>D3.js</li>
+          <li>Three.js</li>
+          <li>Anime.js</li>
+          <li>CSS Transitions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card middleCard">
+    <div class="cardHeader">
+      Back End
+    </div>
+
+    <div class="mTop flex-row-center">
+      <div class="greenCircle mRight">✓</div>
+      <div class="technologies">
+        <div class="largeFont">Servers</div>
+        <ul>
+          <li>Node.js</li>
+          <li>Python/Django/Flask</li>
+          <li>Apache/PHP</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mTop flex-row-center">
+      <div class="greenCircle mRight">✓</div>
+      <div class="technologies">
+        <div class="largeFont">Data</div>
+        <ul>
+          <li>SQL</li>
+          <li>Cassandra</li>
+          <li>Kafka</li>
+          <li>Redis</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mTop flex-row-center">
+      <div class="greenCircle mRight">✓</div>
+      <div class="technologies">
+        <div class="largeFont">Communication</div>
+        <ul>
+          <li>Rest APIs</li>
+          <li>Websockets</li>
+          <li>GraphQL</li>
+          <li>FeatherJS</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="card rightCard mTop">
+    <div class="cardHeader">
+      Dev Ops
+    </div>
+
+    <div class="mTop flex-row-center">
+      <div class="greenCircle mRight">✓</div>
+      <div class="technologies">
+        <div class="largeFont">Command Line</div>
+        <ul>
+          <li>*nix</li>
+          <li>Bash</li>
+          <li>Nginx</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mTop flex-row-center">
+      <div class="greenCircle mRight">✓</div>
+      <div class="technologies">
+        <div class="largeFont">Containerization</div>
+        <ul>
+          <li>Docker</li>
+          <li>Kubernetes</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mTop flex-row-center">
+      <div class="greenCircle mRight">✓</div>
+      <div class="technologies">
+        <div class="largeFont">Cloud Services:</div>
+        <ul>
+          <li>AWS Ec2 Instances</li>
+          <li>AWS RDS Databases</li>
+          <li>AWS Cognito Permissions</li>
+          <li>AWS Internet of Things</li>
+          <li>AWS DynamoDB</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <script>
