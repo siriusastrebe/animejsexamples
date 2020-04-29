@@ -6,6 +6,9 @@
 body {
   font-family: verdana;
 }
+h1 {
+  text-align: center;
+}
 
 .flex-row-around {
   display: flex;
@@ -220,17 +223,24 @@ body {
 }
 
 .previews {
+  margin-top: 2rem;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.previews a {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 .preview {
   position: relative;
   max-height: 300px;
-  max-width: 600px;
+  max-width: 500px;
+  width: 100%;
   overflow: hidden;
   box-shadow: 0px 2px 15px rgba(0.2, 0.2, 0.2, 0.6);
 }
@@ -252,7 +262,7 @@ body {
   position: absolute;
   top: 0px;
   left: 0px;
-  max-width: 600px;
+  max-width: 500px;
   width: 100%;
   height: 100%;
   display: none;
@@ -318,7 +328,7 @@ body {
   </div>
 
   <div class="hackerText">
-    Since then, I graduated with a Computer Science degree from Western Washington University, worked 10+ years professionally propelling start ups like SigmaIQ to their series A, or helping real-estate giant CBRE move their workflow to the digital age.
+    Since then, I graduated with a Computer Science degree from Western Washington University 🎓, worked 10+ years professionally propelling start ups like SigmaIQ to their series A, or helping real-estate giant CBRE move their workflow to the digital age.
   </div>
 </div>
 
@@ -460,10 +470,30 @@ body {
   </div>
 </div>
 
+<h1>Live Code Examples</h1>
+
 <div class="previews">
+  <a href="https://www.viz.chat" target="_blank">
+    <div class="preview">
+      <img class="previewImg" width="100%" src="./public/vizchat.png" />
+      <div class="previewText">
+        Tree-shaped Discussion Board
+      </div>
+    </div>
+  </a>
+
+  <a href="https://www.academiceats.com" target="_blank">
+    <div class="preview">
+      <img class="previewImg" width="100%" src="./public/academiceats.png" />
+      <div class="previewText">
+        Lunches for Private Schools
+      </div>
+    </div>
+  </a>
+
   <a href="https://www.mapthematics.com/ProjectionsList.php" target="_blank">
     <div class="preview">
-      <img class="previewImg" width="600px" src="./public/mapthematics.png" />
+      <img class="previewImg" width="100%" src="./public/mapthematics.png" />
       <div class="previewText">
         Map Projections Tour
       </div>
@@ -471,21 +501,19 @@ body {
   </a>
 
   <a href="https://cdn.rawgit.com/siriusastrebe/d3spectrogram/8939e984/index.html" target="_blank">
-    <div class="preview" style="width: 480px; height: 288px">
-      <!-- 240px x 160px -->
-      <img class="previewImg" width="480px" src="./public/spectrogram.gif" style="position: absolute; top: -32px; margin-bottom: -32px; clip: rect(32px, 9999px, 9999px, 0px)" />
+    <div class="preview">
+      <img class="previewImg" width="100%" src="./public/spectrogram.png" />
       <div class="previewText">
         Audio-Spectrogram in D3.js
       </div>
     </div>
   </a>
 
-  <a href="https://cdn.rawgit.com/siriusastrebe/d3spectrogram/8939e984/index.html" target="_blank">
+  <a href="https://codepen.io/siriusastrebe/full/mGREEW/" target="_blank">
     <div class="preview">
-      <!-- 240px x 160px -->
-      <img class="previewImg" width="600px" src="./public/spectrogram.png" />
+      <img class="previewImg" width="100%" src="./public/morphable.png" />
       <div class="previewText">
-        Audio-Spectrogram in D3.js
+        Morphable Bar/Line Chart<br />In D3.js
       </div>
     </div>
   </a>
@@ -595,8 +623,8 @@ anime.timeline({loop: false})
       {opacity: 1, backgroundColor: '#00FF00'},
       {backgroundColor: '#000000'}
     ],
-    duration: 80,
-    delay: (el, i) => 40 * (i),
+    duration: 40,
+    delay: (el, i) => 20 * (i),
   })
 
 
